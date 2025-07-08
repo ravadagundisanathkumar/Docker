@@ -1,16 +1,18 @@
 DOCKER
 
  launch instance - allow ports on which containers are going to run (i.e, 8080,8081,8082)
- #yum install docker*
-   systemctl enable docker
-  systemctl start docker
-  docker info 
- docker ps -a
- docker image ls
- docker --help
- docker pull ubuntu
- docker pull httpd 
- docker run -it --name web-app -p 8080:8080 ubuntu /bin/bash
+sudo su -
+hostnamectl set-hostname docker.example.com
+yum install docker* -y
+systemctl enable docker
+systemctl start docker
+docker info 
+docker ps -a
+docker image ls
+docker --help
+docker pull ubuntu
+docker pull httpd 
+docker run -it --name web-app -p 8080:8080 ubuntu /bin/bash
     apt update -y
     apt install apache2 -y
     cd /var/www/html
