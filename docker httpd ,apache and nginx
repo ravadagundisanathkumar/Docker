@@ -40,19 +40,24 @@ docker rm web-app
 
 ---Host a Docker instance configure nginx and should be exposed on the port server 8080
 Create and docker-server instance and connect
-#sudo su -
-#hostnamcectl set-hostname docker-server
-#yum install docker*
-#systemctl restart docker
-#systemctl enable docker
-#docker pull nginx
-#docker run -it --name web -p 8080:80 nginx /bin/bash
- inside container commands
- #apt update -y
- #apt install nginx
- #service nginx start
- #service nginx status
+
+sudo su -
+hostnamcectl set-hostname docker-server
+yum install docker*
+systemctl restart docker
+systemctl enable docker
+docker pull nginx
+docker run -it --name web -p 8080:80 nginx /bin/bash
+
+inside container commands
+
+apt update -y
+apt install nginx
+service nginx start
+service nginx status
+
 come out of container 
+
 docker inspect container_name -> cope the ip
 curl http://copied_ip
 copy the public and access the web page on the port 8080
