@@ -1,0 +1,18 @@
+
+files ---------
+sudo su -
+hostnamectl set-hostname docker.example.com
+yum install docker* -y
+systemctl enable docker
+systemctl start docker
+docker ps -a
+docker pull ubuntu
+mkdir /data
+docker run -it -v /data/:/tmp --name copying ubuntu /bin/bash
+cd /tmp
+touch data1.txt{1..5}
+cd
+ctrlP+ctrlq
+cd /data
+ll
+(all files will be visible )
