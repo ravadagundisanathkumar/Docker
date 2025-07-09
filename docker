@@ -1,6 +1,6 @@
 DOCKER
+launch instance - allow ports on which containers are going to run (i.e, 8080,8081,8082)
 
- launch instance - allow ports on which containers are going to run (i.e, 8080,8081,8082)
 sudo su -
 hostnamectl set-hostname docker.example.com
 yum install docker* -y
@@ -13,29 +13,29 @@ docker --help
 docker pull ubuntu
 docker pull httpd 
 docker run -it --name web-app -p 8080:8080 ubuntu /bin/bash
-    apt update -y
-    apt install apache2 -y
-    cd /var/www/html
-    echo "this is web" > index.html
-    service apache2 start
-    (ctrl p ctrl q ) to come out
- curl http://(ip of the instance)
- docker inspect web-app | less     #(get ip from here)
+apt update -y
+apt install apache2 -y
+cd /var/www/html
+echo "this is web" > index.html
+service apache2 start
+(ctrl p ctrl q ) to come out
+curl http://(ip of the instance)
+docker inspect web-app | less     #(get ip from here)
  
-  docker run -it --name web-app1 -p 8081:8080 ubuntu /bin/bash
-    apt update -y
-    apt install apache2 -y
-    cd /var/www/html
-    echo "this is web1" > index.html
-    service apache2 start
-    (ctrl p ctrl q ) to come out
- curl http://(ip of the instance)
+docker run -it --name web-app1 -p 8081:8080 ubuntu /bin/bash
+apt update -y
+apt install apache2 -y
+cd /var/www/html
+echo "this is web1" > index.html
+service apache2 start
+(ctrl p ctrl q ) to come out
+curl http://(ip of the instance)
  
- docker stop web-app
- docker rm web-app
+docker stop web-app
+docker rm web-app
 
- docker kill web-app
- docker rm web-app
+docker kill web-app
+docker rm web-app
 
 
  creating volume 
