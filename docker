@@ -12,7 +12,7 @@ docker image ls
 docker --help
 docker pull ubuntu
 docker pull httpd 
-docker run -it --name web-app -p 8080:8080 ubuntu /bin/bash
+docker run -it --name web-app -p 8080:80 ubuntu /bin/bash
 apt update -y
 apt install apache2 -y
 cd /var/www/html
@@ -22,7 +22,7 @@ service apache2 start
 curl http://(ip of the instance)
 docker inspect web-app | less     #(get ip from here)
  
-docker run -it --name web-app1 -p 8081:8080 ubuntu /bin/bash
+docker run -it --name web-app1 -p 8081:80 ubuntu /bin/bash
 apt update -y
 apt install apache2 -y
 cd /var/www/html
